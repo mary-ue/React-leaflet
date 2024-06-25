@@ -1,0 +1,11 @@
+.mapWrapper {
+  padding: 30px;
+}
+
+.container {
+  margin: 0 auto !important;
+  width: 800px;
+  height: 1000px;
+  overflow: hidden;
+  background-color: #fff;
+}

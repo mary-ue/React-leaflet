@@ -1,0 +1,15 @@
+.container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  height: auto;
+  width: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.container select {
+  width: 200px;
+  height: 20px;
+}
