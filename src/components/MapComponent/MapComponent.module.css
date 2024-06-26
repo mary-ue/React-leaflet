@@ -9,3 +9,16 @@
   overflow: hidden;
   background-color: #fff;
 }
+
+.geojsonToggle {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 10000;
+  margin-top: 20px;
+  background: white;
+  color: #000000;
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 3px;
+}
