@@ -11,7 +11,7 @@ export const MapComponent = () => {
   const state = {
     lat: 35.682839,
     lng: 139.759455,
-    zoom: 11,
+    zoom: 3,
   };
 
   const basemapDict = {
@@ -53,7 +53,8 @@ export const MapComponent = () => {
           />
         </div>
         {
-          geojsonVisible && <GeojsonLayer url="geojson.json"/>
+          // поменяла url для того, чтобы отображались не области, а маркеры
+          geojsonVisible && <GeojsonLayer url="places.json" />
         }
         <Marker position={[state.lat, state.lng]}>
           <Popup>

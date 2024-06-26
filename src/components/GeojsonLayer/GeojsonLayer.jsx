@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FeatureGroup, Popup, GeoJSON } from 'react-leaflet';
+import { FeatureGroup, Popup, Marker } from 'react-leaflet';
 
 // eslint-disable-next-line
 export const GeojsonLayer = ({ url }) => {
@@ -22,22 +22,34 @@ export const GeojsonLayer = ({ url }) => {
 
   useEffect(() => {
     if (url) {
-      {
-        fetchData(url);
-      }
+      fetchData(url);
     }
   }, [url]);
 
   return (
     <FeatureGroup>
-      {data &&
+      {/* {data &&
         data.map((f) => {
           return (
             <GeoJSON key={f.properties.id} data={f}>
               <Popup>{f.properties.id}</Popup>
             </GeoJSON>
           );
-        })}
+        })} */}
+      {data &&
+        data?.map((f) => (
+          <Marker
+            key={JSON.stringify(f.properties)}
+            position={f.geometry.coordinates.reverse()}
+          >
+            <Popup minWidth={200} closeButton={false}>
+              <div style={{ backgroundColor: 'red', color: 'white' }}>
+                <b>Hello</b>
+                <p>I am {f.properties.name}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
     </FeatureGroup>
   );
 };
